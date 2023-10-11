@@ -7,12 +7,8 @@
 </head>
 <body>
     <h1>Rabbit Chase Game - Play</h1>
-    <p>HOP#: {{ H }}</p>
-    <p>DISTANCE TO RABBIT: {{ distance_to_rabbit }}   CLOSEST APPROACH: {{ closest_approach }}</p>
-    <p>{{ rabbit_position }}</p>
-    <p>{{ your_position }}</p>
+    <p style="white-space: pre-wrap">{{text}}</p>
     <form action="/play" method="post">
-        <label for="direction">Enter your direction (0-359):</label>
         <input type="number" id="direction" name="direction" min="0" max="359" required>
         <input type="submit" value="Hop">
     </form>

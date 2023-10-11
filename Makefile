@@ -19,8 +19,8 @@ linux:
 	./$(LIN)/rabbit_chase.exe
 
 web:
-	cmd /c start http://localhost:5000/templates/index.html
-	python -m http.server 5000
+	cmd /c start http://localhost:5000/
+	python app.py
 
 clean:
 	rm -rf $(WIN)

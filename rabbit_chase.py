@@ -2,11 +2,10 @@ import random
 import math
 
 
-def print_position(name, x, y, direction):
-    print(f"{name} --- POSITION: ({x:>4}, {y:>4}) AND DIRECTION: {direction:>3}")
+def main(print, input):
+    def print_position(name, x, y, direction):
+        print(f"{name} --- POSITION: ({x:>4}, {y:>4}) AND DIRECTION: {direction:>3}")
 
-
-def main():
     print("RABBIT CHASE")
     print("CREATIVE COMPUTING  MORRISTOWN NEW JERSEY\n")
 
@@ -26,7 +25,7 @@ def main():
 
     while True:
         D1 = random.randint(0, 359)
-        print(f"HOP#: {H:>3}")
+        print(f"\nHOP#: {H:>3}")
         print(
             f" DISTANCE TO RABBIT: {math.sqrt((X2 - X1) ** 2 + (Y2 - Y1) ** 2):>4}   CLOSEST APPROACH: {math.sqrt(C):>4}\n")
         print_position("RABBIT", X1, Y1, D1)
@@ -34,7 +33,7 @@ def main():
 
         D2 = int(input("Enter your direction (0-359): "))
 
-        if D2 < 0 or D2 >= 360:
+        if D2 <= 0 or D2 >= 360:
             print("Invalid direction. Please enter a number between 0 and 359.")
             continue
 
@@ -59,4 +58,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(print, input)
